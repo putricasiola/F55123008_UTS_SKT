@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package geometry;
+service GeometryService {
+    rpc Persegi (PersegiRequest) returns (GeometryResponse);
+    rpc PersegiPanjang (PersegiPanjangRequest) returns (GeometryResponse);
+    rpc Segitiga (SegitigaRequest) returns (GeometryResponse);
+    rpc Lingkaran (LingkaranRequest) returns (GeometryResponse);
+}
+
+message PersegiRequest {
+    double sisi = 1;
+}
+
+message PersegiPanjangRequest {
+    double panjang = 1;
+    double lebar = 2;
+}
+
+message SegitigaRequest {
+    double alas = 1;
+    double ttinggi = 2;
+}
+
+message LingkaranRequest {
+    double jariJari = 1;
+
+}
+
+message GeometryResponse {
+    double hasil = 1;
+    string bentuk = 2;
+}
